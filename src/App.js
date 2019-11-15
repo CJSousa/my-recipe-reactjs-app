@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe.js";
 import "./App.css";
 
-//38.46
-
 const App = () => {
   const App_ID = "dac80b5d";
   const App_KEY = "0487059a0326879ccf77cb7823cd1a5c	";
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('rice');
+  const [query, setQuery] = useState('strawberry');
 
   useEffect(() => {
     getRecipes();
@@ -53,7 +51,6 @@ const App = () => {
         {recipes.map(recipe => (
           <Recipe
             key={recipe.recipe.label}
-            key2={recipe.recipe.label}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
